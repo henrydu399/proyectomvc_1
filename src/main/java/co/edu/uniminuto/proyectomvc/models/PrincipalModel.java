@@ -16,6 +16,7 @@ import co.edu.uniminuto.proyectomvc.logics.ClienteLogic;
 import co.edu.uniminuto.proyectomvc.logics.PersonaLogic;
 import co.edu.uniminuto.proyectomvc.utils.PropertiesUtil;
 import co.edu.uniminuto.proyectomvc.utils.ViewUtil;
+import co.edu.uniminuto.proyectomvc.views.InformacionView;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -24,11 +25,22 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * @version 1.0
+ * @author henry
+ * <b>funciones</>
+ * - controla el ciclo de vida de la aplicacion 
+ * - controla todos las vistas y controladores de la aplicacion
+ * - controla las clases de logica de la aplicacion
+ * - controla los hilos ejecutados en la aplicacion
+ */
+
 public class PrincipalModel extends Thread{
 
     private List<Cliente> listaClientes;
     private List<Empleado> listaEmpleados;
 
+    //Controladores o Actions de las vistas
     private PrincipalController principalController;
     private GestorClienteController gestorClienteController;
     private MensajeController mensajeController;
@@ -37,13 +49,11 @@ public class PrincipalModel extends Thread{
 
     private Properties properties;
 
-    ////Propiedades para conexion a base de datos
+    ////Unica conexion a la base de datos
     private Connection con;
     //
-    
 
-    
-    //LOGICS
+    //Clases logica de la aplicacion
     private PersonaLogic personaLogic;
     private ClienteLogic clienteLogic;
     ///
@@ -51,9 +61,16 @@ public class PrincipalModel extends Thread{
     private javax.swing.JPanel panelActual;
 
     private NotificacionHilo notificaciones;
+    
+    private InformacionView informacionView;
 
     /**
-     * Carga todos los componentes de la aplicacion, es importante el orden
+     * Carga todos los componentes de la aplicacion
+     *  -Impotante el orden de carga :
+     *      1. Caga las propiedades
+     *      2. Carga la configuracion de la conexion a la base de datos
+     *      3. Instacia los componentes: controladores y logica
+     *      4. Muestra la vista principal
      */
     public void iniciar() {
 
@@ -84,6 +101,11 @@ public class PrincipalModel extends Thread{
         this.personaLogic = new PersonaLogic(new PersonaDao(this.con));
         this.clienteLogic = new ClienteLogic(new ClienteDao(this.con) );
         
+        this.informacionView = new InformacionView();
+        this.informacionView.setSize(800, 400);
+        
+        this.switchView(this.informacionView);
+        
         this.principalController.show();
         
     
@@ -110,6 +132,12 @@ public class PrincipalModel extends Thread{
             this.gestorClienteController.cargarClientes(listaClientes);
     }
     
+    /**
+     * Metodo que guarda el cliente
+     * @param Cliente
+     * @exception ApplicationException
+     * @return void
+    */
     public void guardarCliente(Cliente c) throws ApplicationException{
         this.clienteLogic.save(c);
     }
@@ -137,8 +165,7 @@ public class PrincipalModel extends Thread{
             this.panelActual = view;
         }   
         this.principalController.getPrincipalView().getjInternalFrameCuerpo().getContentPane().add ( view);
-        ViewUtil.fullrepaint(this.principalController.getPrincipalView());
-        
+        ViewUtil.fullrepaint(this.principalController.getPrincipalView());   
     }
     
     

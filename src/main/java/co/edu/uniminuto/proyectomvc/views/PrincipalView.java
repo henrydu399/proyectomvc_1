@@ -41,8 +41,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuCliente = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuInformacion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,14 +84,11 @@ public class PrincipalView extends javax.swing.JFrame {
         });
         jMenuArchivo.add(jMenuCliente);
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenuArchivo.add(jMenuItem1);
-
         jMenuBar1.add(jMenuArchivo);
 
-        jMenu2.setText("Edit");
-        jMenu2.setFont(new java.awt.Font("Mandali", 0, 13)); // NOI18N
-        jMenuBar1.add(jMenu2);
+        jMenuInformacion.setText("Informacion");
+        jMenuInformacion.setFont(new java.awt.Font("Mandali", 0, 13)); // NOI18N
+        jMenuBar1.add(jMenuInformacion);
 
         setJMenuBar(jMenuBar1);
 
@@ -176,10 +172,9 @@ public class PrincipalView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JInternalFrame jInternalFrameCuerpo;
     private javax.swing.JInternalFrame jInternalFrameNotificaciones;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuCliente;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenuInformacion;
     // End of variables declaration//GEN-END:variables
 }

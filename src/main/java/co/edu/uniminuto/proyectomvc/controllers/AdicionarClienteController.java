@@ -61,6 +61,14 @@ public class AdicionarClienteController {
             this.principalModel.mostrarMensaje("El campo Telefono no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
             return;
         }
+        try{
+            Long  l = Long.parseLong(cedula);
+            l = Long.parseLong(Telefono);
+        }catch(Exception e){
+           this.principalModel.mostrarMensaje("El campo Telefono  y cedula solo pueden ser numeros", MensajeController.TipoMensajeEnum.ALERTA);
+            return; 
+        }
+       
         
 
         Cliente c =  new Cliente(Telefono, nombre, cedula, Integer.parseInt(edad) );
