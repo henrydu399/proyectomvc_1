@@ -1,6 +1,7 @@
 
 package co.edu.uniminuto.proyectomvc.controllers;
 
+import co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum;
 import co.edu.uniminuto.proyectomvc.exceptions.ApplicationException;
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
 import co.edu.uniminuto.proyectomvc.utils.ViewUtil;
@@ -41,16 +42,16 @@ public class PrincipalController {
             this.principalModel.cargarClientes();
         } catch (ApplicationException ex) {
             Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
-            this.principalModel.mostrarMensaje("Error cargando los clientes", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("Error cargando los clientes", TipoMensajeEnum.ALERTA);
         }
 
         
         this.principalModel.switchView(this.principalModel.getGestorClienteController().getGestionClienteView());
         
          if( Objects.nonNull(this.principalModel.getListaClientes()) &&  this.principalModel.getListaClientes().size() > 0 ){
-            this.principalModel.mostrarMensaje("SE CARGARON LOS CLIENTES CORRECTAMENTE", MensajeController.TipoMensajeEnum.CORRECTO);
+            this.principalModel.mostrarMensaje("SE CARGARON LOS CLIENTES CORRECTAMENTE", TipoMensajeEnum.CORRECTO);
         }else{
-            this.principalModel.mostrarMensaje("NO SE ENCONTRARON CLIENTES", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("NO SE ENCONTRARON CLIENTES", TipoMensajeEnum.ALERTA);
         }
         
         

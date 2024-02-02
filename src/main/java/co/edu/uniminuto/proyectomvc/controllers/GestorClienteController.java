@@ -4,6 +4,7 @@
  */
 package co.edu.uniminuto.proyectomvc.controllers;
 
+import co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum;
 import co.edu.uniminuto.proyectomvc.exceptions.ApplicationException;
 import co.edu.uniminuto.proyectomvc.models.Cliente;
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
@@ -93,13 +94,13 @@ public class GestorClienteController {
             if (Objects.nonNull(this.clienteSelecionado)) {
                 this.principalModel.eliminarCliente(this.clienteSelecionado);
                 this.principalModel.cargarClientes();
-                this.principalModel.mostrarMensaje("Se elimino el cliente correctamente", MensajeController.TipoMensajeEnum.CORRECTO);
+                this.principalModel.mostrarMensaje("Se elimino el cliente correctamente", TipoMensajeEnum.CORRECTO);
             } else {
-                this.principalModel.mostrarMensaje("Se debe seleccionar un cliente para editar", MensajeController.TipoMensajeEnum.ALERTA);
+                this.principalModel.mostrarMensaje("Se debe seleccionar un cliente para editar", TipoMensajeEnum.ALERTA);
             }
 
         } catch (ApplicationException ex) {
-            this.principalModel.mostrarMensaje("Error eliminando el cliente", MensajeController.TipoMensajeEnum.ERROR);
+            this.principalModel.mostrarMensaje("Error eliminando el cliente", TipoMensajeEnum.ERROR);
             Logger.getLogger(GestorClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -113,7 +114,7 @@ public class GestorClienteController {
             this.principalModel.getEditarClienteController1().setClienteSelecionado(clienteSelecionado);
             this.principalModel.switchView(this.principalModel.getEditarClienteController1().getEditarClienteView());
         } else {
-            this.principalModel.mostrarMensaje("Se debe seleccionar un cliente para editar", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("Se debe seleccionar un cliente para editar", TipoMensajeEnum.ALERTA);
         }
 
     }

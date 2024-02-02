@@ -2,9 +2,7 @@ package co.edu.uniminuto.proyectomvc.controllers;
 
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
 import co.edu.uniminuto.proyectomvc.views.MensajeView;
-import java.awt.Color;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class MensajeController {
 
@@ -20,12 +18,7 @@ public class MensajeController {
 
    
 
-    public enum TipoMensajeEnum {
-        ALERTA,
-        ERROR,
-        CORRECTO
-    }
-
+    
     public MensajeView getMensajeView() {
         return mensajeView;
     }

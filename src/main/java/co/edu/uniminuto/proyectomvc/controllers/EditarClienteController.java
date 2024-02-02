@@ -4,6 +4,7 @@
  */
 package co.edu.uniminuto.proyectomvc.controllers;
 
+import co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum;
 import co.edu.uniminuto.proyectomvc.exceptions.ApplicationException;
 import co.edu.uniminuto.proyectomvc.models.Cliente;
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
@@ -56,15 +57,15 @@ public class EditarClienteController {
         String cedula = this.editarClienteView.getjTextCedula().getText();
         String edad = (String) this.editarClienteView.getjComboEdad().getSelectedItem();
         if (Objects.isNull(nombre) || nombre.isEmpty()) {
-            this.principalModel.mostrarMensaje("El campo nombre no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("El campo nombre no puede estar vacio", TipoMensajeEnum.ALERTA);
             return;
         }
         if (Objects.isNull(cedula) || cedula.isEmpty()) {
-            this.principalModel.mostrarMensaje("El campo cedula no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("El campo cedula no puede estar vacio", TipoMensajeEnum.ALERTA);
             return;
         }
         if (Objects.isNull(Telefono) || Telefono.isEmpty()) {
-            this.principalModel.mostrarMensaje("El campo Telefono no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("El campo Telefono no puede estar vacio", TipoMensajeEnum.ALERTA);
             return;
         }
 
@@ -74,12 +75,12 @@ public class EditarClienteController {
             this.principalModel.editarCliente(c);
 
             this.principalModel.cargarClientes();
-            this.principalModel.mostrarMensaje("Se edito el cliente correctamente", MensajeController.TipoMensajeEnum.CORRECTO);
+            this.principalModel.mostrarMensaje("Se edito el cliente correctamente", TipoMensajeEnum.CORRECTO);
 
             this.principalModel.switchView(this.principalModel.getGestorClienteController().getGestionClienteView());
 
         } catch (ApplicationException ex) {
-            this.principalModel.mostrarMensaje("Error al editar el cliente", MensajeController.TipoMensajeEnum.ERROR);
+            this.principalModel.mostrarMensaje("Error al editar el cliente", TipoMensajeEnum.ERROR);
             Logger.getLogger(EditarClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
 

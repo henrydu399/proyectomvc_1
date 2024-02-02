@@ -4,6 +4,7 @@
  */
 package co.edu.uniminuto.proyectomvc.controllers;
 
+import co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum;
 import co.edu.uniminuto.proyectomvc.exceptions.ApplicationException;
 import co.edu.uniminuto.proyectomvc.models.Cliente;
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
@@ -50,22 +51,22 @@ public class AdicionarClienteController {
         String cedula = this.adicionarClienteView.getjTextCedula().getText();
         String edad = (String) this.adicionarClienteView.getjComboEdad().getSelectedItem();
         if (Objects.isNull(nombre) || nombre.isEmpty()) {
-            this.principalModel.mostrarMensaje("El campo nombre no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("El campo nombre no puede estar vacio", TipoMensajeEnum.ALERTA);
             return;
         }
         if (Objects.isNull(cedula) || cedula.isEmpty()) {
-            this.principalModel.mostrarMensaje("El campo cedula no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("El campo cedula no puede estar vacio", TipoMensajeEnum.ALERTA);
             return;
         }
         if (Objects.isNull(Telefono) || Telefono.isEmpty()) {
-            this.principalModel.mostrarMensaje("El campo Telefono no puede estar vacio", MensajeController.TipoMensajeEnum.ALERTA);
+            this.principalModel.mostrarMensaje("El campo Telefono no puede estar vacio", TipoMensajeEnum.ALERTA);
             return;
         }
         try{
             Long  l = Long.parseLong(cedula);
             l = Long.parseLong(Telefono);
         }catch(Exception e){
-           this.principalModel.mostrarMensaje("El campo Telefono  y cedula solo pueden ser numeros", MensajeController.TipoMensajeEnum.ALERTA);
+           this.principalModel.mostrarMensaje("El campo Telefono  y cedula solo pueden ser numeros", TipoMensajeEnum.ALERTA);
             return; 
         }
        
@@ -76,11 +77,11 @@ public class AdicionarClienteController {
         try {
             boolean clienteExiste = this.principalModel.existeCliente(c);
             if(clienteExiste){
-                this.principalModel.mostrarMensaje("Ya existe un cliente con esos datos", MensajeController.TipoMensajeEnum.ALERTA);
+                this.principalModel.mostrarMensaje("Ya existe un cliente con esos datos", TipoMensajeEnum.ALERTA);
                 return;
             }
         } catch (ApplicationException ex) {
-            this.principalModel.mostrarMensaje("Error consultado si existe el cliente", MensajeController.TipoMensajeEnum.ERROR);
+            this.principalModel.mostrarMensaje("Error consultado si existe el cliente", TipoMensajeEnum.ERROR);
             Logger.getLogger(AdicionarClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -90,14 +91,14 @@ public class AdicionarClienteController {
             this.principalModel.guardarCliente(c);
             
             this.principalModel.cargarClientes();
-            this.principalModel.mostrarMensaje("Se guardo el cliente correctamente", MensajeController.TipoMensajeEnum.CORRECTO);
+            this.principalModel.mostrarMensaje("Se guardo el cliente correctamente", TipoMensajeEnum.CORRECTO);
             
             this.clear ();
             this.principalModel.switchView(this.principalModel.getGestorClienteController().getGestionClienteView());
             
             
         } catch (ApplicationException ex) {
-            this.principalModel.mostrarMensaje("Error al guardar el cliente", MensajeController.TipoMensajeEnum.ERROR);
+            this.principalModel.mostrarMensaje("Error al guardar el cliente", TipoMensajeEnum.ERROR);
             Logger.getLogger(AdicionarClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
         

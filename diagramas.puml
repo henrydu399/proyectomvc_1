@@ -1,0 +1,287 @@
+@startuml
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class co.edu.uniminuto.proyectomvc.Proyectomvc
+class co.edu.uniminuto.proyectomvc.config.ConexionCofig
+class co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController
+class co.edu.uniminuto.proyectomvc.controllers.EditarClienteController
+class co.edu.uniminuto.proyectomvc.controllers.GestorClienteController
+class co.edu.uniminuto.proyectomvc.controllers.MensajeController
+class co.edu.uniminuto.proyectomvc.controllers.PrincipalController
+class co.edu.uniminuto.proyectomvc.daos.ClienteDao
+class co.edu.uniminuto.proyectomvc.daos.Dao
+class co.edu.uniminuto.proyectomvc.daos.EmpleadoDao
+class co.edu.uniminuto.proyectomvc.daos.PersonaDao
+class co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+class co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo
+class co.edu.uniminuto.proyectomvc.logics.ClienteLogic
+class co.edu.uniminuto.proyectomvc.logics.Logic
+class co.edu.uniminuto.proyectomvc.logics.PersonaLogic
+class co.edu.uniminuto.proyectomvc.mensajes.MensajesView
+class co.edu.uniminuto.proyectomvc.models.Cliente
+class co.edu.uniminuto.proyectomvc.models.Empleado
+class co.edu.uniminuto.proyectomvc.models.Persona
+class co.edu.uniminuto.proyectomvc.models.PrincipalModel
+class co.edu.uniminuto.proyectomvc.utils.DaoUtil
+class co.edu.uniminuto.proyectomvc.utils.JTableUtils
+class co.edu.uniminuto.proyectomvc.utils.PropertiesUtil
+class co.edu.uniminuto.proyectomvc.utils.ViewUtil
+class co.edu.uniminuto.proyectomvc.views.InformacionView
+class co.edu.uniminuto.proyectomvc.views.MensajeView
+class co.edu.uniminuto.proyectomvc.views.PrincipalView
+class co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView
+class co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView
+class co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView
+class java.awt.Color
+class java.awt.Font
+class java.io.File
+class java.io.FileInputStream
+class java.io.FileNotFoundException
+class java.io.IOException
+class java.io.InputStream
+class java.lang.Exception
+class java.lang.Thread
+class java.net.URL
+class java.sql.Connection
+class java.sql.DriverManager
+class java.sql.PreparedStatement
+class java.sql.ResultSet
+class java.sql.SQLException
+class java.sql.Statement
+class java.util.ArrayList
+class java.util.List
+class java.util.Objects
+class java.util.Properties
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.swing.ComboBoxModel
+class javax.swing.JButton
+class javax.swing.JComboBox
+class javax.swing.JFrame
+class javax.swing.JInternalFrame
+class javax.swing.JLabel
+class javax.swing.JMenuItem
+class javax.swing.JPanel
+class javax.swing.JTable
+class javax.swing.JTextField
+class javax.swing.plaf.basic.BasicInternalFrameUI
+enum co.edu.uniminuto.proyectomvc.enums.PropertiesEnum
+enum co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+interface co.edu.uniminuto.proyectomvc.daos.IDao
+interface co.edu.uniminuto.proyectomvc.logics.ILogic
+co.edu.uniminuto.proyectomvc.Proyectomvc ..> co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo
+co.edu.uniminuto.proyectomvc.Proyectomvc ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> co.edu.uniminuto.proyectomvc.mensajes.MensajesView
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> co.edu.uniminuto.proyectomvc.utils.PropertiesUtil
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> java.sql.DriverManager
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> java.sql.SQLException
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> java.util.Properties
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.config.ConexionCofig ..> co.edu.uniminuto.proyectomvc.enums.PropertiesEnum
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> javax.swing.ComboBoxModel
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> javax.swing.JComboBox
+co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController ..> co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> javax.swing.ComboBoxModel
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> javax.swing.JComboBox
+co.edu.uniminuto.proyectomvc.controllers.EditarClienteController ..> co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.utils.JTableUtils
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.utils.ViewUtil
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> java.util.List
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.controllers.GestorClienteController ..> co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+co.edu.uniminuto.proyectomvc.controllers.MensajeController ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.controllers.MensajeController ..> co.edu.uniminuto.proyectomvc.views.MensajeView
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> co.edu.uniminuto.proyectomvc.utils.ViewUtil
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> co.edu.uniminuto.proyectomvc.views.PrincipalView
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> java.awt.Color
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.controllers.PrincipalController ..> co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.daos.ClienteDao --|> co.edu.uniminuto.proyectomvc.daos.Dao
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> co.edu.uniminuto.proyectomvc.models.Persona
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> co.edu.uniminuto.proyectomvc.utils.DaoUtil
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.sql.PreparedStatement
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.sql.ResultSet
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.sql.SQLException
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.sql.Statement
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.util.ArrayList
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.util.List
+co.edu.uniminuto.proyectomvc.daos.ClienteDao ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.daos.ClienteDao --|> co.edu.uniminuto.proyectomvc.daos.IDao
+co.edu.uniminuto.proyectomvc.daos.Dao ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao --|> co.edu.uniminuto.proyectomvc.daos.Dao
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao ..> co.edu.uniminuto.proyectomvc.models.Empleado
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao ..> java.util.List
+co.edu.uniminuto.proyectomvc.daos.EmpleadoDao --|> co.edu.uniminuto.proyectomvc.daos.IDao
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.daos.PersonaDao --|> co.edu.uniminuto.proyectomvc.daos.Dao
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> co.edu.uniminuto.proyectomvc.models.Persona
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> co.edu.uniminuto.proyectomvc.utils.DaoUtil
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.sql.PreparedStatement
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.sql.ResultSet
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.sql.SQLException
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.sql.Statement
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.util.ArrayList
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.util.List
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.daos.PersonaDao ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.daos.PersonaDao --|> co.edu.uniminuto.proyectomvc.daos.IDao
+co.edu.uniminuto.proyectomvc.exceptions.ApplicationException --|> java.lang.Exception
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> co.edu.uniminuto.proyectomvc.controllers.MensajeController
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> co.edu.uniminuto.proyectomvc.models.PrincipalModel
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> co.edu.uniminuto.proyectomvc.utils.ViewUtil
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> java.awt.Color
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo --|> java.lang.Thread
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo ..> co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.daos.ClienteDao
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.daos.Dao
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.daos.PersonaDao
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic --|> co.edu.uniminuto.proyectomvc.logics.Logic
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.models.Persona
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> co.edu.uniminuto.proyectomvc.utils.DaoUtil
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic ..> java.util.List
+co.edu.uniminuto.proyectomvc.logics.ClienteLogic --|> co.edu.uniminuto.proyectomvc.logics.ILogic
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> co.edu.uniminuto.proyectomvc.daos.Dao
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> co.edu.uniminuto.proyectomvc.daos.PersonaDao
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic --|> co.edu.uniminuto.proyectomvc.logics.Logic
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> co.edu.uniminuto.proyectomvc.models.Persona
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> co.edu.uniminuto.proyectomvc.utils.DaoUtil
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> java.sql.SQLException
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> java.util.List
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.logics.PersonaLogic --|> co.edu.uniminuto.proyectomvc.logics.ILogic
+co.edu.uniminuto.proyectomvc.models.Cliente --|> co.edu.uniminuto.proyectomvc.models.Persona
+co.edu.uniminuto.proyectomvc.models.Cliente ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.models.Empleado ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.models.Empleado --|> co.edu.uniminuto.proyectomvc.models.Persona
+co.edu.uniminuto.proyectomvc.models.Empleado ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.models.Persona ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.models.Persona ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.lang.Override
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.config.ConexionCofig
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.controllers.AdicionarClienteController
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.controllers.EditarClienteController
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.controllers.GestorClienteController
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.controllers.MensajeController
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.controllers.PrincipalController
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.daos.ClienteDao
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.daos.PersonaDao
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.logics.ClienteLogic
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.logics.PersonaLogic
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.utils.PropertiesUtil
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.utils.ViewUtil
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.views.InformacionView
+co.edu.uniminuto.proyectomvc.models.PrincipalModel --|> java.lang.Thread
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.sql.SQLException
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.util.List
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.util.Properties
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.models.PrincipalModel ..> co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> co.edu.uniminuto.proyectomvc.daos.PersonaDao
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.sql.Connection
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.sql.ResultSet
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.sql.SQLException
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.sql.Statement
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.util.Objects
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.utils.DaoUtil ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.utils.JTableUtils ..> co.edu.uniminuto.proyectomvc.models.Cliente
+co.edu.uniminuto.proyectomvc.utils.JTableUtils ..> java.util.List
+co.edu.uniminuto.proyectomvc.utils.JTableUtils ..> javax.swing.JTable
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> co.edu.uniminuto.proyectomvc.mensajes.MensajesView
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.io.File
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.io.FileInputStream
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.io.FileNotFoundException
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.io.IOException
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.io.InputStream
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.util.Properties
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.util.logging.Level
+co.edu.uniminuto.proyectomvc.utils.PropertiesUtil ..> java.util.logging.Logger
+co.edu.uniminuto.proyectomvc.utils.ViewUtil ..> java.awt.Font
+co.edu.uniminuto.proyectomvc.utils.ViewUtil ..> javax.swing.JInternalFrame
+co.edu.uniminuto.proyectomvc.utils.ViewUtil ..> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.views.InformacionView ..> java.lang.SuppressWarnings
+co.edu.uniminuto.proyectomvc.views.InformacionView --|> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.views.MensajeView ..> java.lang.SuppressWarnings
+co.edu.uniminuto.proyectomvc.views.MensajeView ..> javax.swing.JLabel
+co.edu.uniminuto.proyectomvc.views.MensajeView --|> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.views.PrincipalView ..> java.lang.SuppressWarnings
+co.edu.uniminuto.proyectomvc.views.PrincipalView --|> javax.swing.JFrame
+co.edu.uniminuto.proyectomvc.views.PrincipalView ..> javax.swing.JInternalFrame
+co.edu.uniminuto.proyectomvc.views.PrincipalView ..> javax.swing.JMenuItem
+co.edu.uniminuto.proyectomvc.views.PrincipalView ..> javax.swing.plaf.basic.BasicInternalFrameUI
+co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView ..> java.lang.SuppressWarnings
+co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView ..> javax.swing.JButton
+co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView ..> javax.swing.JComboBox
+co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView --|> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.views.clients.AdicionarClienteView ..> javax.swing.JTextField
+co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView ..> java.lang.SuppressWarnings
+co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView ..> javax.swing.JButton
+co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView ..> javax.swing.JComboBox
+co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView --|> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.views.clients.EditarClienteView ..> javax.swing.JTextField
+co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView ..> java.lang.SuppressWarnings
+co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView ..> java.net.URL
+co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView ..> javax.swing.JButton
+co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView --|> javax.swing.JPanel
+co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView ..> javax.swing.JTable
+co.edu.uniminuto.proyectomvc.views.clients.GestionCLienteView ..> javax.swing.JTextField
+co.edu.uniminuto.proyectomvc.daos.IDao ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.daos.IDao ..> java.util.List
+co.edu.uniminuto.proyectomvc.logics.ILogic ..> co.edu.uniminuto.proyectomvc.exceptions.ApplicationException
+co.edu.uniminuto.proyectomvc.logics.ILogic ..> java.util.List
+@enduml

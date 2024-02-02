@@ -1,10 +1,7 @@
 package co.edu.uniminuto.proyectomvc.hilos;
 
 import co.edu.uniminuto.proyectomvc.controllers.MensajeController;
-import co.edu.uniminuto.proyectomvc.controllers.MensajeController.TipoMensajeEnum;
-import static co.edu.uniminuto.proyectomvc.controllers.MensajeController.TipoMensajeEnum.ALERTA;
-import static co.edu.uniminuto.proyectomvc.controllers.MensajeController.TipoMensajeEnum.CORRECTO;
-import static co.edu.uniminuto.proyectomvc.controllers.MensajeController.TipoMensajeEnum.ERROR;
+import co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum;
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
 import co.edu.uniminuto.proyectomvc.utils.ViewUtil;
 import java.awt.Color;

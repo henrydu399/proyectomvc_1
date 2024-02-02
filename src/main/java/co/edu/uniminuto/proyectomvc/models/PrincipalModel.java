@@ -6,10 +6,11 @@ import co.edu.uniminuto.proyectomvc.controllers.EditarClienteController;
 
 import co.edu.uniminuto.proyectomvc.controllers.GestorClienteController;
 import co.edu.uniminuto.proyectomvc.controllers.MensajeController;
-import co.edu.uniminuto.proyectomvc.controllers.MensajeController.TipoMensajeEnum;
+
 import co.edu.uniminuto.proyectomvc.controllers.PrincipalController;
 import co.edu.uniminuto.proyectomvc.daos.ClienteDao;
 import co.edu.uniminuto.proyectomvc.daos.PersonaDao;
+import co.edu.uniminuto.proyectomvc.enums.TipoMensajeEnum;
 import co.edu.uniminuto.proyectomvc.exceptions.ApplicationException;
 import co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo;
 import co.edu.uniminuto.proyectomvc.logics.ClienteLogic;
