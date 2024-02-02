@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package co.edu.uniminuto.proyectomvc.views.clients;
+package co.edu.uniminuto.proyectomvc.views;
+
+import javax.swing.JLabel;
 
 /**
  *
@@ -15,6 +17,7 @@ public class MensajeView extends javax.swing.JPanel {
      */
     public MensajeView() {
         initComponents();
+          this.jLabelImgAlerta.setIcon(new javax.swing.ImageIcon(this.getClass().getResource("/img/alerta.png"))); // NOI18N
     }
 
     /**
@@ -27,7 +30,9 @@ public class MensajeView extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabelMensaje = new javax.swing.JLabel();
+        jLabelImgAlerta = new javax.swing.JLabel();
 
+        jLabelMensaje.setFont(new java.awt.Font("Mandali", 0, 14)); // NOI18N
         jLabelMensaje.setText("ESTE ES EL MENSAJE DE BIENVENIDA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -35,20 +40,32 @@ public class MensajeView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 49, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jLabelImgAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelImgAlerta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public JLabel getjLabelMensaje() {
+        return jLabelMensaje;
+    }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabelImgAlerta;
     private javax.swing.JLabel jLabelMensaje;
     // End of variables declaration//GEN-END:variables
 }

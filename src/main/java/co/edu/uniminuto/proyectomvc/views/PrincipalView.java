@@ -3,6 +3,7 @@ package co.edu.uniminuto.proyectomvc.views;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JMenuItem;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
@@ -15,6 +16,15 @@ public class PrincipalView extends javax.swing.JFrame {
      */
     public PrincipalView() {
         initComponents();
+        
+        this.jInternalFrameNotificaciones.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.jInternalFrameNotificaciones.getUI();
+        bui.setNorthPane(null);
+        
+        this.jInternalFrameCuerpo.setBorder(null);
+        BasicInternalFrameUI bui2 = (BasicInternalFrameUI) this.jInternalFrameCuerpo.getUI();
+        bui2.setNorthPane(null);
+        
     }
 
     /**
@@ -26,6 +36,8 @@ public class PrincipalView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrameNotificaciones = new javax.swing.JInternalFrame();
+        jInternalFrameCuerpo = new javax.swing.JInternalFrame();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuCliente = new javax.swing.JMenuItem();
@@ -34,7 +46,36 @@ public class PrincipalView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jInternalFrameNotificaciones.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrameNotificacionesLayout = new javax.swing.GroupLayout(jInternalFrameNotificaciones.getContentPane());
+        jInternalFrameNotificaciones.getContentPane().setLayout(jInternalFrameNotificacionesLayout);
+        jInternalFrameNotificacionesLayout.setHorizontalGroup(
+            jInternalFrameNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1068, Short.MAX_VALUE)
+        );
+        jInternalFrameNotificacionesLayout.setVerticalGroup(
+            jInternalFrameNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 43, Short.MAX_VALUE)
+        );
+
+        jInternalFrameCuerpo.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrameCuerpoLayout = new javax.swing.GroupLayout(jInternalFrameCuerpo.getContentPane());
+        jInternalFrameCuerpo.getContentPane().setLayout(jInternalFrameCuerpoLayout);
+        jInternalFrameCuerpoLayout.setHorizontalGroup(
+            jInternalFrameCuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrameCuerpoLayout.setVerticalGroup(
+            jInternalFrameCuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
+
+        jMenuBar1.setFont(new java.awt.Font("Mandali", 0, 13)); // NOI18N
+
         jMenuArchivo.setText("Archivo");
+        jMenuArchivo.setFont(new java.awt.Font("Mandali", 0, 13)); // NOI18N
 
         jMenuCliente.setText("Clientes");
         jMenuCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +91,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenuBar1.add(jMenuArchivo);
 
         jMenu2.setText("Edit");
+        jMenu2.setFont(new java.awt.Font("Mandali", 0, 13)); // NOI18N
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -58,11 +100,16 @@ public class PrincipalView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addComponent(jInternalFrameNotificaciones, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jInternalFrameCuerpo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jInternalFrameNotificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jInternalFrameCuerpo)
+                .addContainerGap())
         );
 
         pack();
@@ -112,6 +159,14 @@ public class PrincipalView extends javax.swing.JFrame {
         return jMenuCliente;
     }
 
+    public JInternalFrame getjInternalFrameCuerpo() {
+        return jInternalFrameCuerpo;
+    }
+
+    public JInternalFrame getjInternalFrameNotificaciones() {
+        return jInternalFrameNotificaciones;
+    }
+
   
     
     
@@ -119,6 +174,8 @@ public class PrincipalView extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JInternalFrame jInternalFrameCuerpo;
+    private javax.swing.JInternalFrame jInternalFrameNotificaciones;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;

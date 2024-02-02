@@ -4,16 +4,24 @@
 
 package co.edu.uniminuto.proyectomvc;
 
+import co.edu.uniminuto.proyectomvc.hilos.NotificacionHilo;
 import co.edu.uniminuto.proyectomvc.models.PrincipalModel;
 
-/**
- *
- * @author henry
- */
-public class Proyectomvc {
 
+public class Proyectomvc {
+    
+    private static PrincipalModel p;
+  
+
+  
+    
+    
+    
+    
     public static void main(String[] args) {
-      PrincipalModel p = new PrincipalModel();
-      p.run();
+         p = new PrincipalModel();
+         p.start();
     }
+
+ 
 }

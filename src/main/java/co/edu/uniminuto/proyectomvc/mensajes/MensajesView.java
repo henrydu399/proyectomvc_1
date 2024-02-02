@@ -9,4 +9,6 @@ public class MensajesView {
     
     public static final String ERROR_CARGANDO_PROPERTIES = "Error cargando las propiedades del sistema";
     
+        public static final String ERROR_CONECTANDO_BASE_DATOS = "Error conectando a la base de datos";
+    
 }

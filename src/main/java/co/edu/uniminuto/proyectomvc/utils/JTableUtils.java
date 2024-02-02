@@ -11,46 +11,34 @@ public class JTableUtils {
 
         int count = 0;
         for (Cliente s : list) {
-            out[count][0] = String.valueOf(s.getId());
+            out[count][0] = String.valueOf(s.getTelefono());
             out[count][1] = s.getCedula();
             out[count][2] = s.getNombre();
-            out[count][3] = s.getTelefono();
+            out[count][3] = String.valueOf(s.getEdad());
             count++;
         }
         return out;
 
     }
 
-    public static String selectDataJtable(JTable table) {
-        String selectedData = "";
+  
+    
+        public static Cliente selectClienteDataJtable(JTable table) {
         int[] selectedRow = table.getSelectedRows();
-        int[] selectedColumns = table.getSelectedColumns();
+        Cliente c = null;
         for (int i = 0; i < selectedRow.length; i++) {
-            for (int j = 0; j < selectedColumns.length; j++) {
-                selectedData = (String) table.getValueAt(selectedRow[i], selectedColumns[j]);
-            }
+            c = new Cliente(
+                    (String) table.getValueAt(selectedRow[i],0), 
+                    (String) table.getValueAt(selectedRow[i],2), 
+                    (String) table.getValueAt(selectedRow[i],1),        
+                    Integer.parseInt( (String)table.getValueAt(selectedRow[i],3)) );
+            //selectedData = (String) table.getValueAt(selectedRow[i], 2);
         }
-        return selectedData;
+        return c;
     }
 
-    public static String selectEmailDataJtable(JTable table) {
-        String selectedData = "";
-        int[] selectedRow = table.getSelectedRows();
-        int[] selectedColumns = table.getSelectedColumns();
-        for (int i = 0; i < selectedRow.length; i++) {
-            selectedData = (String) table.getValueAt(selectedRow[i], 2);
-        }
-        return selectedData;
-    }
+  
 
-    public static String selectIdDataJtable(JTable table) {
-        String selectedData = "";
-        int[] selectedRow = table.getSelectedRows();
-        int[] selectedColumns = table.getSelectedColumns();
-        for (int i = 0; i < selectedRow.length; i++) {
-            selectedData = (String) table.getValueAt(selectedRow[i], 0);
-        }
-        return selectedData;
-    }
+   
 
 }
